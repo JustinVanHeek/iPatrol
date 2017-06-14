@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dev.ipatrol.MainActivity">
+
+    <TextView
+        android:layout_width="381dp"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:text="iPatrol+"
+        android:textSize="36sp"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="127dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_dialog_info"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@android:style/Widget.Material.Light.Button"
+        android:layout_width="382dp"
+        android:layout_height="96dp"
+        android:text="Continue Current Patrol"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="374dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="121dp"
+        android:layout_height="96dp"
+        android:text="Settings"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="470dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="121dp"
+        android:layout_height="96dp"
+        android:text="Completed Patrols"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="470dp" />
+
+    <Button
+        android:id="@+id/new_patrol_button"
+        android:layout_width="121dp"
+        android:layout_height="96dp"
+        android:text="New Patrol"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="470dp" />
+
+</android.support.constraint.ConstraintLayout>

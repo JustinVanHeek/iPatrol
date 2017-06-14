@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="weathertypelist">
+        <item>@string/weathertype1</item>
+        <item>@string/weathertype2</item>
+        <item>@string/weathertype3</item>
+        <item>@string/weathertype4</item>
+    </string-array>
+
+    <string-array name="timetypelist">
+        <item>@string/timetype1</item>
+        <item>@string/timetype2</item>
+        <item>@string/timetype3</item>
+        <item>@string/timetype4</item>
+        <item>@string/timetype5</item>
+    </string-array>
+</resources>
