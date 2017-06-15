@@ -299,22 +299,29 @@
 
     <LinearLayout
         android:id="@+id/DataRows"
-        android:layout_width="395dp"
-        android:layout_height="320dp"
+        android:layout_width="325dp"
+        android:layout_height="312dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="243dp">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.511">
 
         <LinearLayout
             android:id="@+id/NavButtons"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/BackButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Back"
                 tools:layout_editor_absoluteX="8dp"
@@ -323,7 +330,7 @@
             <Button
                 android:id="@+id/NextButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Next"
                 tools:layout_editor_absoluteX="280dp"
@@ -334,8 +341,8 @@
         <TextView
             android:id="@+id/UserLoginText"
             android:layout_width="match_parent"
-            android:layout_height="29dp"
-            android:layout_weight="0.40"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:text="User Login:"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="522dp" />
@@ -343,35 +350,35 @@
         <TextView
             android:id="@+id/PatrollersText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:text="Patrollers:" />
 
         <TextView
             android:id="@+id/DateTimeText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:text="Date And Time:" />
 
         <TextView
             android:id="@+id/LocationText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:text="Location:" />
 
         <TextView
             android:id="@+id/ConditionsText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:text="Conditions:" />
 
         <TextView
             android:id="@+id/PatrolTypeText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:text="Patrol Type:" />
 
