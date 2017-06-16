@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -21,8 +22,8 @@ public class NewPatrol extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_patrol);
 
-        Button button = (Button) findViewById(R.id.new_patrol_button);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button next = (Button) findViewById(R.id.NextButton);
+        next.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -31,8 +32,45 @@ public class NewPatrol extends AppCompatActivity {
 
         });
 
+        Button back = (Button) findViewById(R.id.BackButton);
+        back.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                prevPage();
+            }
+
+        });
+
+
+
         dataRows = (LinearLayout) findViewById(R.id.DataRows);
 
+        showForm();
+
+        final LinearLayout layout = (LinearLayout) findViewById(R.id.DataRows);
+        ViewTreeObserver vto = layout.getViewTreeObserver();
+        vto.addOnGlobalLayoutListener (new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                layout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                nextPage();
+                prevPage();
+                setDataRowHeight();
+
+            }
+        });
+
+
+    }
+
+    public int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
     }
 
     private void nextPage() {
@@ -40,7 +78,9 @@ public class NewPatrol extends AppCompatActivity {
         if (page > 5) {
             goToMenuActivity();
         } else {
-            changePage();
+            hideForm(page - 1);
+            moveDataRowUp();
+            showForm();
         }
     }
 
@@ -49,27 +89,26 @@ public class NewPatrol extends AppCompatActivity {
         if (page < 0) {
             goToMainActivity();
         } else {
-            changePage();
+            hideForm(page + 1);
+            moveDataRowDown();
+            showForm();
         }
-    }
-
-    private void changePage() {
-        hideCurrentForm();
-        setDataRowHeight();
-        showForm();
     }
 
     private void showForm() {
         ConstraintLayout form = getForm(page);
         form.setVisibility(View.VISIBLE);
+        form.setAlpha(0.0f);
         ViewGroup.LayoutParams layout = form.getLayoutParams();
         layout.height = (ViewGroup.LayoutParams.MATCH_PARENT);
         layout.width = (ViewGroup.LayoutParams.MATCH_PARENT);
         form.setLayoutParams(layout);
+        form.animate().alpha(1.0f);
     }
 
-    private void hideCurrentForm() {
-        ConstraintLayout form = getForm(page - 1);
+    private void hideForm(int p) {
+        ConstraintLayout form = getForm(p);
+        form.animate().alpha(0.0f);
         form.setVisibility(View.GONE);
     }
 
@@ -92,12 +131,26 @@ public class NewPatrol extends AppCompatActivity {
         return form;
     }
 
+    private void moveDataRowUp() {
+        //Get data row height
+        int dataRowHeight = dataRows.getHeight();
+        int rowHeight = dataRowHeight/7; //7 rows of data (All equal heights)
+
+        dataRows.animate().translationY(-rowHeight*page);
+    }
+    private void moveDataRowDown() {
+        //Get data row height
+        int dataRowHeight = dataRows.getHeight();
+        int rowHeight = dataRowHeight/7; //7 rows of data (All equal heights)
+
+        dataRows.animate().translationY(rowHeight*page);
+    }
     private void setDataRowHeight() {
 
         //Get screen height
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int screenHeight = displayMetrics.heightPixels;
+        int screenHeight = displayMetrics.heightPixels - getStatusBarHeight();
 
         //Get data row height
         int dataRowHeight = dataRows.getHeight();

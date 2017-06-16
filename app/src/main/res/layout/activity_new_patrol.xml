@@ -8,8 +8,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/PatrolType"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -17,40 +17,42 @@
 
         <ImageButton
             android:id="@+id/CarButton"
-            android:layout_width="1dp"
-            android:layout_height="1dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toRightOf="@+id/BikeButton"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:color/holo_blue_bright" />
+            app:srcCompat="@drawable/speeding" />
 
         <ImageButton
             android:id="@+id/BikeButton"
-            android:layout_width="1dp"
-            android:layout_height="1dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:color/holo_blue_bright"
-            tools:layout_editor_absoluteX="0dp" />
+            app:srcCompat="@drawable/reckless_driving"
+            tools:layout_editor_absoluteX="68dp" />
 
         <ImageButton
             android:id="@+id/FootButton"
-            android:layout_width="1dp"
-            android:layout_height="1dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginLeft="6dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="8dp"
+            app:layout_constraintHorizontal_bias="0.666"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/BikeButton"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:color/holo_blue_bright" />
+            app:srcCompat="@drawable/street_performing" />
 
         <TextView
             android:id="@+id/PatrolTypeDescription"
@@ -60,31 +62,34 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:text="Select your patrol type."
-            app:layout_constraintHorizontal_bias="0.475"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            tools:layout_editor_absoluteY="25dp" />
+            app:layout_constraintTop_toBottomOf="@+id/BikeButton" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/Conditions"
-        android:layout_width="0dp"
-        android:layout_height="227dp"
-        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="0dp"
-        app:layout_constraintHorizontal_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <Spinner
             android:id="@+id/SpinnerWeather"
-            android:layout_width="119dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="124dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:entries="@array/weathertypelist"
             android:prompt="@string/weather"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -95,10 +100,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="6dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="8dp"
             android:entries="@array/timetypelist"
             android:prompt="@string/time"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toRightOf="@+id/SpinnerWeather"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"></Spinner>
 
@@ -107,9 +115,9 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/Location"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -146,8 +154,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/UserLogin"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -187,8 +195,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/DateTime"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:visibility="gone"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -197,7 +205,7 @@
 
         <EditText
             android:id="@+id/DateForm"
-            android:layout_width="1dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
@@ -207,7 +215,7 @@
 
         <EditText
             android:id="@+id/TimeForm"
-            android:layout_width="1dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_weight="0.26"
@@ -218,8 +226,9 @@
 
         <TextView
             android:id="@+id/DateTimeDescription"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
@@ -227,14 +236,13 @@
             android:text="If you're a member of a CPC, enter your CPC code in the field above. If you don't have a CPC code you can enter the name of your patrol group, or leave the field blank."
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/DateForm"
-            android:layout_marginEnd="8dp" />
+            app:layout_constraintTop_toBottomOf="@+id/DateForm" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/Patrollers"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -242,8 +250,8 @@
 
         <TextView
             android:id="@+id/PatrollersDescription"
-            android:layout_width="1dp"
-            android:layout_height="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
@@ -253,7 +261,7 @@
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+            app:layout_constraintTop_toBottomOf="@+id/RemoveButton" />
 
         <ImageButton
             android:id="@+id/AddButton"
@@ -274,11 +282,16 @@
 
         <ScrollView
             android:id="@+id/scrollView2"
-            android:layout_width="1dp"
-            android:layout_height="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="0dp">
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -304,9 +317,7 @@
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="520dp"
-        android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="0dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.511">
 
