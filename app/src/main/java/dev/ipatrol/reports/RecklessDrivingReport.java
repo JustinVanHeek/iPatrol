@@ -14,7 +14,7 @@ public class RecklessDrivingReport extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_graffiti_report);
+        setContentView(R.layout.activity_reckless_driving_report);
 
 
 
