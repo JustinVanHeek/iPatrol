@@ -29,7 +29,7 @@ public class AbandonedCarReport extends AppCompatActivity {
         });
 
 
-        Button email = (Button) findViewById(R.id.EmailButton);
+        /*Button email = (Button) findViewById(R.id.EmailButton);
         email.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -37,7 +37,7 @@ public class AbandonedCarReport extends AppCompatActivity {
                 email();
             }
 
-        });
+        });*/
 
 
         Button submit = (Button) findViewById(R.id.OKButton);

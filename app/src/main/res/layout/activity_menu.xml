@@ -73,7 +73,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@android:color/holo_green_dark"
+                android:background="@color/tileGraffiti"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -81,7 +81,6 @@
                     android:id="@+id/GraffitiImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@android:color/holo_green_dark"
                     app:srcCompat="@drawable/graffiti"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
@@ -90,7 +89,6 @@
                     android:id="@+id/GraffitiText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_green_dark"
                     android:gravity="center"
                     android:text="Graffiti"
                     android:textColor="@android:color/background_light" />
@@ -105,7 +103,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@android:color/holo_purple"
+                android:background="@color/tileMischief"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -113,7 +111,6 @@
                     android:id="@+id/MischiefImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@android:color/holo_purple"
                     app:srcCompat="@drawable/mischief"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
@@ -122,7 +119,6 @@
                     android:id="@+id/MischiefText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_purple"
                     android:gravity="center"
                     android:text="Mischief"
                     android:textColor="@android:color/background_light" />
@@ -136,7 +132,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@android:color/holo_blue_dark"
+                android:background="@color/tileDumping"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -144,7 +140,6 @@
                     android:id="@+id/IllegalDumpImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@android:color/holo_blue_dark"
                     app:srcCompat="@drawable/illegal_dumping"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
@@ -153,7 +148,6 @@
                     android:id="@+id/IllegalDumpText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_blue_dark"
                     android:gravity="center"
                     android:text="Illegal Dumping"
                     android:textColor="@android:color/background_light"
@@ -168,7 +162,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@android:color/holo_green_light"
+                android:background="@color/tilePoliceCall"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -176,7 +170,6 @@
                     android:id="@+id/PoliceCallImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@android:color/holo_green_light"
                     app:srcCompat="@drawable/police_call"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
@@ -185,7 +178,6 @@
                     android:id="@+id/PoliceCallText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_green_light"
                     android:gravity="center"
                     android:text="Police Call"
                     android:textColor="@android:color/background_light" />
@@ -206,7 +198,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@android:color/holo_blue_bright"
+                android:background="@color/tileStreetPerform"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -214,7 +206,6 @@
                     android:id="@+id/StreetPerformImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@android:color/holo_blue_bright"
                     app:srcCompat="@drawable/street_performing"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
@@ -223,7 +214,6 @@
                     android:id="@+id/StreetPerformText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_blue_bright"
                     android:gravity="center"
                     android:text="Street Peforming"
                     android:textColor="@android:color/background_light"
@@ -239,7 +229,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@android:color/holo_orange_light"
+                android:background="@color/tileOffLeash"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -247,7 +237,6 @@
                     android:id="@+id/OffLeashImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@android:color/holo_orange_light"
                     app:srcCompat="@drawable/offleash"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
@@ -256,7 +245,6 @@
                     android:id="@+id/OffLeashText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_orange_light"
                     android:gravity="center"
                     android:text="Off Leash"
                     android:textColor="@android:color/background_light" />
@@ -270,7 +258,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@android:color/holo_orange_dark"
+                android:background="@color/tileDrugUse"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -278,7 +266,6 @@
                     android:id="@+id/DrugImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@android:color/holo_orange_dark"
                     app:srcCompat="@drawable/drug_use"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
@@ -287,7 +274,6 @@
                     android:id="@+id/DrugText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_orange_dark"
                     android:gravity="center"
                     android:text="Drug Use"
                     android:textColor="@android:color/background_light" />
@@ -301,7 +287,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@android:color/holo_red_light"
+                android:background="@color/tileAlcohol"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -309,7 +295,6 @@
                     android:id="@+id/AlcoholImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@android:color/holo_red_light"
                     app:srcCompat="@drawable/alcohol"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
@@ -318,7 +303,6 @@
                     android:id="@+id/Alcohol"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_red_light"
                     android:gravity="center"
                     android:text="Alcohol"
                     android:textColor="@android:color/background_light" />
@@ -341,7 +325,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@android:color/holo_blue_light"
+                android:background="@color/tileReckless"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -349,7 +333,6 @@
                     android:id="@+id/RecklessImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@android:color/holo_blue_light"
                     app:srcCompat="@drawable/reckless_driving"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
@@ -358,7 +341,6 @@
                     android:id="@+id/RecklessText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_blue_light"
                     android:gravity="center"
                     android:text="Reckless"
                     android:textColor="@android:color/background_light" />
@@ -373,7 +355,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@android:color/holo_red_dark"
+                android:background="@color/tileSpeeding"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -381,7 +363,6 @@
                     android:id="@+id/SpeedingImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@android:color/holo_red_dark"
                     app:srcCompat="@drawable/speeding"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
@@ -390,7 +371,6 @@
                     android:id="@+id/SpeedingText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_red_dark"
                     android:gravity="center"
                     android:text="Speeding"
                     android:textColor="@android:color/background_light" />
@@ -404,7 +384,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@android:color/holo_purple"
+                android:background="@color/tileAbandoned"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -412,7 +392,6 @@
                     android:id="@+id/AbandonedImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@android:color/holo_purple"
                     app:srcCompat="@drawable/illegal_dumping"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
@@ -421,7 +400,6 @@
                     android:id="@+id/Abandoned"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_purple"
                     android:gravity="center"
                     android:text="Abandoned"
                     android:textColor="@android:color/background_light" />
@@ -435,7 +413,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@android:color/holo_orange_light"
+                android:background="@color/tileCrimePrev"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -443,7 +421,6 @@
                     android:id="@+id/CrimePreventImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@android:color/holo_orange_light"
                     app:srcCompat="@drawable/police_call"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
@@ -452,7 +429,6 @@
                     android:id="@+id/CrimePreventText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_orange_light"
                     android:gravity="center"
                     android:text="Crime Prevention"
                     android:textColor="@android:color/background_light"
@@ -474,7 +450,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@android:color/darker_gray"
+                android:background="@color/tileOther"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -482,7 +458,6 @@
                     android:id="@+id/OtherImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="@android:color/darker_gray"
                     app:srcCompat="@drawable/other"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
@@ -491,7 +466,6 @@
                     android:id="@+id/OtherText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/darker_gray"
                     android:gravity="center"
                     android:text="Other"
                     android:textColor="@android:color/background_light" />

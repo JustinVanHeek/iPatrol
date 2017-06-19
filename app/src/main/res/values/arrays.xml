@@ -14,4 +14,15 @@
         <item>@string/timetype4</item>
         <item>@string/timetype5</item>
     </string-array>
+
+    <string-array name="facinglist">
+        <item>@string/facing1</item>
+        <item>@string/facing2</item>
+        <item>@string/facing3</item>
+        <item>@string/facing4</item>
+        <item>@string/facing5</item>
+        <item>@string/facing6</item>
+        <item>@string/facing7</item>
+        <item>@string/facing8</item>
+    </string-array>
 </resources>

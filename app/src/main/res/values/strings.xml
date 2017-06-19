@@ -14,5 +14,17 @@
 
     <string name="weather">Weather</string>
     <string name="time">Time</string>
+    <string name="facing">Facing</string>
+
+    <string name="itemvalue">Item Type &amp; Value</string>
+
+    <string name="facing1">N</string>
+    <string name="facing2">NE</string>
+    <string name="facing3">E</string>
+    <string name="facing4">SE</string>
+    <string name="facing5">S</string>
+    <string name="facing6">SW</string>
+    <string name="facing7">W</string>
+    <string name="facing8">NW</string>
 
 </resources>

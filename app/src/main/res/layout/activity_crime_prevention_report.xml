@@ -10,70 +10,228 @@
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:background="@android:color/holo_green_dark"
+        android:background="@color/tileCrimePrev"
         android:gravity="center"
-        android:text="Graffiti"
+        android:text="Crime Prevention Notice"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/Form"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="29dp"
-        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/Buttons"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title">
 
-        <ImageView
-            android:id="@+id/camera"
+        <LinearLayout
+            android:id="@+id/Form"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="29dp"
+            android:orientation="vertical"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title"
-            app:srcCompat="@android:drawable/ic_menu_camera" />
+            app:layout_constraintTop_toBottomOf="@+id/title">
 
-        <TextView
-            android:id="@+id/LocationLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Location" />
+            <TextView
+                android:id="@+id/LocationLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location" />
 
-        <EditText
-            android:id="@+id/LocationText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPostalAddress" />
+            <EditText
+                android:id="@+id/LocationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPostalAddress" />
 
-        <TextView
-            android:id="@+id/NotesLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Notes" />
+            <TextView
+                android:id="@+id/ItemTypeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/itemvalue" />
 
-        <EditText
-            android:id="@+id/NotesText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textMultiLine" />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
-    </LinearLayout>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/PhoneCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Phone" />
+
+                    <CheckBox
+                        android:id="@+id/GPSCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="GPS" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/BagCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bag" />
+
+                    <CheckBox
+                        android:id="@+id/PetCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pet" />
+                </TableRow>
+
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/OtherLabel"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Other" />
+
+                <EditText
+                    android:id="@+id/OtherText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ValueLabel"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Value" />
+
+                <EditText
+                    android:id="@+id/ValueText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/VehicleInfoLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Vehicle Information" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/UnlockedCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Unlocked" />
+
+                    <CheckBox
+                        android:id="@+id/WindowCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Window Open" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/SecurityCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Security Syst." />
+
+                    <CheckBox
+                        android:id="@+id/TintCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tinted Window" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/PlateCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Expired Plate" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/NotesLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notes" />
+
+            <EditText
+                android:id="@+id/NotesText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/Buttons"
@@ -85,7 +243,9 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent">
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
 
         <Button
             android:id="@+id/OKButton"
@@ -94,21 +254,8 @@
             android:layout_margin="10dp"
 
             android:layout_weight="0.33"
-            android:background="@android:color/holo_green_dark"
+            android:background="@color/tileCrimePrev"
             android:text="OK"
-            android:textColor="@android:color/background_light"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/EmailButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-
-            android:layout_weight="0.33"
-            android:background="@android:color/holo_green_dark"
-            android:text="Email"
-            android:textAllCaps="false"
             android:textColor="@android:color/background_light"
             android:textSize="18sp" />
 
@@ -119,7 +266,7 @@
             android:layout_margin="10dp"
 
             android:layout_weight="0.33"
-            android:background="@android:color/darker_gray"
+            android:background="@color/Silver"
             android:text="Cancel"
             android:textAllCaps="false"
             android:textColor="@android:color/background_light"

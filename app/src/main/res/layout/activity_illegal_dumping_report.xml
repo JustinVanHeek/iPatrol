@@ -10,9 +10,9 @@
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:background="@android:color/holo_green_dark"
+        android:background="@color/tileDumping"
         android:gravity="center"
-        android:text="Graffiti"
+        android:text="Illegal Dumping"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -94,7 +94,7 @@
             android:layout_margin="10dp"
 
             android:layout_weight="0.33"
-            android:background="@android:color/holo_green_dark"
+            android:background="@color/tileDumping"
             android:text="OK"
             android:textColor="@android:color/background_light"
             android:textSize="18sp" />
@@ -106,7 +106,7 @@
             android:layout_margin="10dp"
 
             android:layout_weight="0.33"
-            android:background="@android:color/holo_green_dark"
+            android:background="@color/tileDumping"
             android:text="Email"
             android:textAllCaps="false"
             android:textColor="@android:color/background_light"
@@ -119,7 +119,7 @@
             android:layout_margin="10dp"
 
             android:layout_weight="0.33"
-            android:background="@android:color/darker_gray"
+            android:background="@color/Silver"
             android:text="Cancel"
             android:textAllCaps="false"
             android:textColor="@android:color/background_light"
