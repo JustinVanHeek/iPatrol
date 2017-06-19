@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="dev.ipatrol.reports.GraffitiReport">
+    tools:context="dev.ipatrol.activityreports.GraffitiReportActivity">
 
     <TextView
         android:id="@+id/title"
@@ -229,6 +229,12 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textMultiLine" />
+
+            <TextView
+                android:id="@+id/margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp" />
 
         </LinearLayout>
     </ScrollView>

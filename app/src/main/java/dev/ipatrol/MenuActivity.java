@@ -7,19 +7,19 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import dev.ipatrol.reports.AbandonedCarReport;
-import dev.ipatrol.reports.AlcoholReport;
-import dev.ipatrol.reports.CrimePreventionReport;
-import dev.ipatrol.reports.DrugUseReport;
-import dev.ipatrol.reports.GraffitiReport;
-import dev.ipatrol.reports.IllegalDumpingReport;
-import dev.ipatrol.reports.MischiefReport;
-import dev.ipatrol.reports.OffLeashReport;
-import dev.ipatrol.reports.OtherReport;
-import dev.ipatrol.reports.PoliceCallReport;
-import dev.ipatrol.reports.RecklessDrivingReport;
-import dev.ipatrol.reports.SpeedingReport;
-import dev.ipatrol.reports.StreetPerformingReport;
+import dev.ipatrol.activityreports.AbandonedCarReportActivity;
+import dev.ipatrol.activityreports.AlcoholReportActivity;
+import dev.ipatrol.activityreports.CrimePreventionReportActivity;
+import dev.ipatrol.activityreports.DrugUseReportActivity;
+import dev.ipatrol.activityreports.GraffitiReportActivity;
+import dev.ipatrol.activityreports.IllegalDumpingReportActivity;
+import dev.ipatrol.activityreports.MischiefReportActivity;
+import dev.ipatrol.activityreports.OffLeashReportActivity;
+import dev.ipatrol.activityreports.OtherReportActivity;
+import dev.ipatrol.activityreports.PoliceCallReportActivity;
+import dev.ipatrol.activityreports.RecklessDrivingReportActivity;
+import dev.ipatrol.activityreports.SpeedingReportActivity;
+import dev.ipatrol.activityreports.StreetPerformingReportActivity;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -159,67 +159,67 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void goToGraffiti() {
-        Intent intent = new Intent(this, GraffitiReport.class);
+        Intent intent = new Intent(this, GraffitiReportActivity.class);
         startActivity(intent);
     }
 
     private void goToMischief() {
-        Intent intent = new Intent(this, MischiefReport.class);
+        Intent intent = new Intent(this, MischiefReportActivity.class);
         startActivity(intent);
     }
 
     private void goToDumping() {
-        Intent intent = new Intent(this, IllegalDumpingReport.class);
+        Intent intent = new Intent(this, IllegalDumpingReportActivity.class);
         startActivity(intent);
     }
 
     private void goToPolice() {
-        Intent intent = new Intent(this, PoliceCallReport.class);
+        Intent intent = new Intent(this, PoliceCallReportActivity.class);
         startActivity(intent);
     }
 
     private void goToStreetPerf() {
-        Intent intent = new Intent(this, StreetPerformingReport.class);
+        Intent intent = new Intent(this, StreetPerformingReportActivity.class);
         startActivity(intent);
     }
 
     private void goToLeash() {
-        Intent intent = new Intent(this, OffLeashReport.class);
+        Intent intent = new Intent(this, OffLeashReportActivity.class);
         startActivity(intent);
     }
 
     private void goToDrug() {
-        Intent intent = new Intent(this, DrugUseReport.class);
+        Intent intent = new Intent(this, DrugUseReportActivity.class);
         startActivity(intent);
     }
 
     private void goToAlcohol() {
-        Intent intent = new Intent(this, AlcoholReport.class);
+        Intent intent = new Intent(this, AlcoholReportActivity.class);
         startActivity(intent);
     }
 
     private void goToReckless() {
-        Intent intent = new Intent(this, RecklessDrivingReport.class);
+        Intent intent = new Intent(this, RecklessDrivingReportActivity.class);
         startActivity(intent);
     }
 
     private void goToSpeeding() {
-        Intent intent = new Intent(this, SpeedingReport.class);
+        Intent intent = new Intent(this, SpeedingReportActivity.class);
         startActivity(intent);
     }
 
     private void goToAbandoned() {
-        Intent intent = new Intent(this, AbandonedCarReport.class);
+        Intent intent = new Intent(this, AbandonedCarReportActivity.class);
         startActivity(intent);
     }
 
     private void goToCrimePrev() {
-        Intent intent = new Intent(this, CrimePreventionReport.class);
+        Intent intent = new Intent(this, CrimePreventionReportActivity.class);
         startActivity(intent);
     }
 
     private void goToOther() {
-        Intent intent = new Intent(this, OtherReport.class);
+        Intent intent = new Intent(this, OtherReportActivity.class);
         startActivity(intent);
     }
 

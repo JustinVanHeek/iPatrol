@@ -233,7 +233,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="If you're a member of a CPC, enter your CPC code in the field above. If you don't have a CPC code you can enter the name of your patrol group, or leave the field blank."
+            android:text="Select the patrol start time."
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/DateForm" />

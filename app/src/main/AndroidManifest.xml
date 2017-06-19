@@ -18,7 +18,23 @@
         </activity>
         <activity android:name=".NewPatrol" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".reports.GraffitiReport"></activity>
+        <activity android:name=".activityreports.GraffitiReportActivity"></activity>
+        <activity android:name=".activityreports.ParkingMeterReportActivity"></activity>
+        <activity android:name=".activityreports.PoliceCallReportActivity"></activity>
+        <activity android:name=".activityreports.RecklessDrivingReportActivity"></activity>
+        <activity android:name=".activityreports.SpeedingReportActivity"></activity>
+        <activity android:name=".activityreports.StreetPerformingReportActivity"></activity>
+        <activity android:name=".activityreports.TFAGlassReportActivity"></activity>
+        <activity android:name=".activityreports.AbandonedCarReportActivity"></activity>
+        <activity android:name=".activityreports.AlcoholReportActivity"></activity>
+        <activity android:name=".activityreports.CrimePreventionReportActivity"></activity>
+        <activity android:name=".activityreports.DrugUseReportActivity"></activity>
+        <activity android:name=".activityreports.IllegalDumpingReportActivity"></activity>
+        <activity android:name=".activityreports.MischiefReportActivity"></activity>
+        <activity android:name=".activityreports.OffLeashReportActivity"></activity>
+        <activity android:name=".activityreports.OtherReportActivity"></activity>
+
+
     </application>
 
 </manifest>

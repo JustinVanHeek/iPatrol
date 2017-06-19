@@ -1,21 +1,20 @@
-package dev.ipatrol.reports;
+package dev.ipatrol.activityreports;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 import dev.ipatrol.MenuActivity;
 import dev.ipatrol.R;
 
-public class GraffitiReport extends AppCompatActivity {
+public class ParkingMeterReportActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_graffiti_report);
+        setContentView(R.layout.activity_parking_meter_report);
 
 
 
@@ -30,7 +29,7 @@ public class GraffitiReport extends AppCompatActivity {
         });
 
 
-        Button email = (Button) findViewById(R.id.EmailButton);
+        /*Button email = (Button) findViewById(R.id.EmailButton);
         email.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -38,7 +37,7 @@ public class GraffitiReport extends AppCompatActivity {
                 email();
             }
 
-        });
+        });*/
 
 
         Button submit = (Button) findViewById(R.id.OKButton);

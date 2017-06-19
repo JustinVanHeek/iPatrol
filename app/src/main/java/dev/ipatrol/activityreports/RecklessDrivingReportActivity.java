@@ -1,4 +1,4 @@
-package dev.ipatrol.reports;
+package dev.ipatrol.activityreports;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,12 +9,12 @@ import android.widget.Button;
 import dev.ipatrol.MenuActivity;
 import dev.ipatrol.R;
 
-public class OffLeashReport extends AppCompatActivity {
+public class RecklessDrivingReportActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_off_leash_report);
+        setContentView(R.layout.activity_reckless_driving_report);
 
 
 

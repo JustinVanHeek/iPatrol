@@ -1,4 +1,4 @@
-package dev.ipatrol.reports;
+package dev.ipatrol.activityreports;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,12 +9,12 @@ import android.widget.Button;
 import dev.ipatrol.MenuActivity;
 import dev.ipatrol.R;
 
-public class IllegalDumpingReport extends AppCompatActivity {
+public class SpeedingReportActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_illegal_dumping_report);
+        setContentView(R.layout.activity_speeding_report);
 
 
 
@@ -29,7 +29,7 @@ public class IllegalDumpingReport extends AppCompatActivity {
         });
 
 
-        Button email = (Button) findViewById(R.id.EmailButton);
+        /*Button email = (Button) findViewById(R.id.EmailButton);
         email.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -37,7 +37,7 @@ public class IllegalDumpingReport extends AppCompatActivity {
                 email();
             }
 
-        });
+        });*/
 
 
         Button submit = (Button) findViewById(R.id.OKButton);
