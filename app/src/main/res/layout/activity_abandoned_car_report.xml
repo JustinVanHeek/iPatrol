@@ -23,15 +23,15 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="0dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/Buttons"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/title">
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
 
         <LinearLayout
             android:id="@+id/Form"
@@ -46,6 +46,35 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title">
+
+            <TextView
+                android:id="@+id/TitleLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                tools:layout_editor_absoluteX="59dp"
+                tools:layout_editor_absoluteY="143dp" />
+
+            <EditText
+                android:id="@+id/TitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text" />
+
+            <ImageView
+                android:id="@+id/camera"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
 
             <TextView
                 android:id="@+id/LocationLabel"
@@ -67,97 +96,129 @@
 
                 <TextView
                     android:id="@+id/MakeLabel"
-                    android:layout_width="96dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:text="Make" />
+                    android:layout_weight="1"
+                    android:text="Make"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="143dp" />
 
                 <EditText
                     android:id="@+id/MakeText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="text" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
 
                 <TextView
                     android:id="@+id/ModelLabel"
-                    android:layout_width="96dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:text="Model" />
+                    android:layout_weight="1"
+                    android:text="Model"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="143dp" />
 
                 <EditText
                     android:id="@+id/ModelText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="text" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
 
                 <TextView
                     android:id="@+id/ColourLabel"
-                    android:layout_width="96dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:text="Colour" />
+                    android:layout_weight="1"
+                    android:text="Colour"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="143dp" />
 
                 <EditText
                     android:id="@+id/ColourText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="text" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
 
                 <TextView
                     android:id="@+id/ConditionLabel"
-                    android:layout_width="96dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:text="Condition" />
+                    android:layout_weight="1"
+                    android:text="Condition"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="143dp" />
 
                 <EditText
                     android:id="@+id/ConditionText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="text" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
 
                 <TextView
                     android:id="@+id/PlateLabel"
-                    android:layout_width="96dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:text="Plate #" />
+                    android:layout_weight="1"
+                    android:text="Plate #"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="143dp" />
 
                 <EditText
                     android:id="@+id/PlateText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="text" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -166,14 +227,17 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/ExpiredPlateLabel"
-                    android:layout_width="96dp"
+                    android:id="@+id/ExpPlateLabel"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:text="Expired Plate" />
+                    android:layout_weight="0.09"
+                    android:text="Exp. Plate"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="143dp" />
 
                 <CheckBox
-                    android:id="@+id/ExpiredPlateCheck"
-                    android:layout_width="match_parent"
+                    android:id="@+id/ExpPlateCheck"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
@@ -184,14 +248,17 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/FlatTireLabel"
-                    android:layout_width="96dp"
+                    android:id="@+id/TireLabel"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:text="Flat Tire" />
+                    android:layout_weight="0.09"
+                    android:text="Flat Tire"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="143dp" />
 
                 <CheckBox
-                    android:id="@+id/FlatTireCheck"
-                    android:layout_width="match_parent"
+                    android:id="@+id/TireCheck"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
             </LinearLayout>
@@ -203,22 +270,26 @@
 
                 <TextView
                     android:id="@+id/FacingLabel"
-                    android:layout_width="96dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:text="Facing" />
+                    android:layout_weight="0.09"
+                    android:text="Facing"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="143dp" />
 
                 <Spinner
-                    android:id="@+id/SpinnerFacing"
-                    android:layout_width="match_parent"
+                    android:id="@+id/FacingSpinner"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="124dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.09"
                     android:entries="@array/facinglist"
                     android:prompt="@string/weather"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent"></Spinner>
+
             </LinearLayout>
 
             <TextView
@@ -234,14 +305,36 @@
                 android:ems="10"
                 android:inputType="textMultiLine" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ReportedLabel"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.09"
+                    android:text="Reported to Police"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="143dp" />
+
+                <CheckBox
+                    android:id="@+id/ReportedCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
             <TextView
-                android:id="@+id/margin"
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24sp" />
+                android:layout_weight="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="0dp" />
 
         </LinearLayout>
-
     </ScrollView>
 
     <LinearLayout
@@ -264,9 +357,22 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
 
-            android:layout_weight="0.17"
+            android:layout_weight="0.33"
             android:background="@color/tileAbandoned"
             android:text="OK"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/EmailButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:layout_weight="0.33"
+            android:background="@color/tileAbandoned"
+            android:text="Email"
+            android:textAllCaps="false"
             android:textColor="@android:color/background_light"
             android:textSize="18sp" />
 
@@ -276,7 +382,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
 
-            android:layout_weight="0.18"
+            android:layout_weight="0.33"
             android:background="@color/Silver"
             android:text="Cancel"
             android:textAllCaps="false"

@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import dev.ipatrol.objects.Patrol;
+
 public class MainActivity extends AppCompatActivity {
+
+    public static Patrol currentPatrol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void goToNewPatrol() {
+        currentPatrol = new Patrol();
+
         Intent intent = new Intent(this, NewPatrol.class);
         startActivity(intent);
 

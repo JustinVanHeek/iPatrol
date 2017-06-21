@@ -1,68 +1,36 @@
 package dev.ipatrol.activityreports;
 
 import android.content.Intent;
+import android.location.Location;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
+import dev.ipatrol.MainActivity;
 import dev.ipatrol.MenuActivity;
 import dev.ipatrol.R;
+import dev.ipatrol.objects.reports.AbandonedCarReport;
+import dev.ipatrol.objects.reports.GraffitiReport;
+import dev.ipatrol.objects.reports.Report;
 
-public class AbandonedCarReportActivity extends AppCompatActivity {
+public class AbandonedCarReportActivity extends ReportActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abandoned_car_report);
+        setupCommonButtons();
 
-
-
-        Button cancel = (Button) findViewById(R.id.CancelButton);
-        cancel.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                cancel();
-            }
-
-        });
-
-
-        /*Button email = (Button) findViewById(R.id.EmailButton);
-        email.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                email();
-            }
-
-        });*/
-
-
-        Button submit = (Button) findViewById(R.id.OKButton);
-        submit.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                submit();
-            }
-
-        });
     }
 
-    private void submit() {
-        //TODO
-        Intent intent = new Intent(this, MenuActivity.class);
-        startActivity(intent);
+    @Override
+    protected Report createReport() {
+        AbandonedCarReport report = new AbandonedCarReport(getReportTitle(),getImage(),getLocation(),getNotes());
+        return report;
     }
 
-    private void email() {
-        //TODO
-    }
 
-    private void cancel() {
-        Intent intent = new Intent(this, MenuActivity.class);
-        startActivity(intent);
-    }
 }

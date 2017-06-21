@@ -96,15 +96,15 @@
             app:layout_constraintTop_toTopOf="parent"></Spinner>
 
         <Spinner
-            android:id="@+id/SpinnerTime"
+            android:id="@+id/SpinnerLight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="6dp"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="6dp"
             android:layout_marginTop="8dp"
-            android:entries="@array/timetypelist"
-            android:prompt="@string/time"
+            android:entries="@array/lighttypelist"
+            android:prompt="@string/lighting"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toRightOf="@+id/SpinnerWeather"
             app:layout_constraintRight_toRightOf="parent"
@@ -153,76 +153,65 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/UserLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/UserLoginForm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="textPersonName"
-            android:text="CPC code or group name"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/UserLoginDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="If you're a member of a CPC, enter your CPC code in the field above. If you don't have a CPC code you can enter the name of your patrol group, or leave the field blank."
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/UserLoginForm" />
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
         android:id="@+id/DateTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:layout_width="337dp"
+        android:layout_height="411dp"
+        android:visibility="visible"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="0dp">
 
         <EditText
-            android:id="@+id/DateForm"
-            android:layout_width="wrap_content"
+            android:id="@+id/Month"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
             android:ems="10"
-            android:inputType="date"
-            app:layout_constraintRight_toLeftOf="@+id/TimeForm"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:inputType="number"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteY="0dp" />
 
         <EditText
-            android:id="@+id/TimeForm"
-            android:layout_width="wrap_content"
+            android:id="@+id/Day"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_weight="0.26"
+            android:layout_marginLeft="-9dp"
             android:ems="10"
-            android:inputType="time"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="0dp" />
+            android:inputType="number"
+            app:layout_constraintLeft_toRightOf="@+id/Month"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <EditText
+            android:id="@+id/Year"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintLeft_toRightOf="@+id/Day"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <EditText
+            android:id="@+id/Hour"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            tools:layout_editor_absoluteY="0dp"
+            app:layout_constraintRight_toLeftOf="@+id/Minute"
+            android:layout_marginRight="0dp" />
+
+        <EditText
+            android:id="@+id/Minute"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintRight_toRightOf="parent" />
 
         <TextView
             android:id="@+id/DateTimeDescription"
@@ -232,11 +221,10 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:text="Select the patrol start time."
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/DateForm" />
+            tools:layout_editor_absoluteY="59dp" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -294,6 +282,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
+                android:id="@+id/PatrollersForm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -348,15 +337,6 @@
                 tools:layout_editor_absoluteY="465dp" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/UserLoginText"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="User Login:"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="522dp" />
 
         <TextView
             android:id="@+id/PatrollersText"

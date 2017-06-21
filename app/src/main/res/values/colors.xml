@@ -5,18 +5,18 @@
     <color name="colorAccent">#ff4081</color>
 
     <color name="tileAbandoned">#5f3040</color>
-    <color name="tileAlcohol">#dc8d77</color>
-    <color name="tileCrimePrev">#e8c746</color>
+    <color name="tileAlcohol">#a34d45</color>
+    <color name="tileCrimePrev">#b08c01</color>
     <color name="tileDrugUse">#ff7322</color>
-    <color name="tileGraffiti">#407136</color>
-    <color name="tileDumping">#425cc4</color>
-    <color name="tileMischief">#960e3d</color>
+    <color name="tileGraffiti">#325a2a</color>
+    <color name="tileDumping">#2652ad</color>
+    <color name="tileMischief">#810b34</color>
     <color name="tileOffLeash">#ffa600</color>
     <color name="tilePoliceCall">#93b86a</color>
-    <color name="tileReckless">#3a915d</color>
+    <color name="tileReckless">#7e914f</color>
     <color name="tileSpeeding">#bd1013</color>
     <color name="tileStreetPerform">#4abcc8</color>
-    <color name="tileOther">#D3D3D3</color>
+    <color name="tileOther">#6a6a6a</color>
 
     <color name="White">#FFFFFF</color>
     <color name="Ivory">#FFFFF0</color>
@@ -158,4 +158,9 @@
     <color name="DarkBlue">#00008B</color>
     <color name="Navy">#000080</color>
     <color name="Black">#000000</color>
+    <color name="tileBusiness">#3688ae</color>
+    <color name="tileBushParty">#711f8f</color>
+    <color name="tilePublicFacilities">#c64f21</color>
+    <color name="tileSuspicious">#a00e11</color>
+    <color name="tileOpenAccess">#1c675d</color>
 </resources>

@@ -9,17 +9,21 @@ import android.widget.TextView;
 
 import dev.ipatrol.activityreports.AbandonedCarReportActivity;
 import dev.ipatrol.activityreports.AlcoholReportActivity;
+import dev.ipatrol.activityreports.BushPartyReportActivity;
+import dev.ipatrol.activityreports.BusinessReportActivity;
 import dev.ipatrol.activityreports.CrimePreventionReportActivity;
-import dev.ipatrol.activityreports.DrugUseReportActivity;
 import dev.ipatrol.activityreports.GraffitiReportActivity;
 import dev.ipatrol.activityreports.IllegalDumpingReportActivity;
 import dev.ipatrol.activityreports.MischiefReportActivity;
-import dev.ipatrol.activityreports.OffLeashReportActivity;
+import dev.ipatrol.activityreports.OpenDoorReportActivity;
 import dev.ipatrol.activityreports.OtherReportActivity;
-import dev.ipatrol.activityreports.PoliceCallReportActivity;
+import dev.ipatrol.activityreports.RecFacilityReportActivity;
 import dev.ipatrol.activityreports.RecklessDrivingReportActivity;
-import dev.ipatrol.activityreports.SpeedingReportActivity;
-import dev.ipatrol.activityreports.StreetPerformingReportActivity;
+import dev.ipatrol.activityreports.SuspiciousReportActivity;
+import dev.ipatrol.objects.Patrol;
+import dev.ipatrol.objects.reports.BushPartyReport;
+import dev.ipatrol.objects.reports.BusinessReport;
+import dev.ipatrol.objects.reports.OpenDoorReport;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -73,35 +77,35 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        LinearLayout police = (LinearLayout) findViewById(R.id.PoliceCallTile);
-        police.setOnClickListener(new View.OnClickListener() {
+        LinearLayout business = (LinearLayout) findViewById(R.id.BusinessTile);
+        business.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToPolice();
+                goToBusiness();
             }
         });
 
-        LinearLayout streetPerf = (LinearLayout) findViewById(R.id.StreetPerformTile);
-        streetPerf.setOnClickListener(new View.OnClickListener() {
+        LinearLayout bush = (LinearLayout) findViewById(R.id.BushPartyTile);
+        bush.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToStreetPerf();
+                goToBushParty();
             }
         });
 
-        LinearLayout leash = (LinearLayout) findViewById(R.id.OffLeashTile);
-        leash.setOnClickListener(new View.OnClickListener() {
+        LinearLayout facilities = (LinearLayout) findViewById(R.id.PublicFacilitiesTile);
+        facilities.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToLeash();
+                goToFacilities();
             }
         });
 
-        LinearLayout drug = (LinearLayout) findViewById(R.id.DrugTile);
-        drug.setOnClickListener(new View.OnClickListener() {
+        LinearLayout suspicious = (LinearLayout) findViewById(R.id.SuspiciousTile);
+        suspicious.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToDrug();
+                goToSuspicious();
             }
         });
 
@@ -121,11 +125,11 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        LinearLayout speeding = (LinearLayout) findViewById(R.id.SpeedingTile);
-        speeding.setOnClickListener(new View.OnClickListener() {
+        LinearLayout open = (LinearLayout) findViewById(R.id.OpenAccessTile);
+        open.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToSpeeding();
+                goToOpenAccess();
             }
         });
 
@@ -153,9 +157,39 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        if(MainActivity.currentPatrol.getPatrolType() == null) {
+            MainActivity.currentPatrol.setPatrolType(Patrol.PatrolType.Foot);
+        }
+        ((TextView) findViewById(R.id.PatrolTitle)).setText(MainActivity.currentPatrol.getPatrolType().name() + " Patrol");
 
+    }
 
+    private void goToBusiness() {
+        //TODO
+        Intent intent = new Intent(this, BusinessReportActivity.class);
+        startActivity(intent);
+    }
 
+    private void goToBushParty() {
+        Intent intent = new Intent(this, BushPartyReportActivity.class);
+        startActivity(intent);
+    }
+
+    private void goToFacilities() {
+        //TODO
+        Intent intent = new Intent(this, RecFacilityReportActivity.class);
+        startActivity(intent);
+    }
+
+    private void goToSuspicious() {
+        Intent intent = new Intent(this, SuspiciousReportActivity.class);
+        startActivity(intent);
+    }
+
+    private void goToOpenAccess() {
+        //TODO
+        Intent intent = new Intent(this, OpenDoorReportActivity.class);
+        startActivity(intent);
     }
 
     private void goToGraffiti() {
@@ -164,6 +198,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void goToMischief() {
+        //TODO
         Intent intent = new Intent(this, MischiefReportActivity.class);
         startActivity(intent);
     }
@@ -173,25 +208,7 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void goToPolice() {
-        Intent intent = new Intent(this, PoliceCallReportActivity.class);
-        startActivity(intent);
-    }
 
-    private void goToStreetPerf() {
-        Intent intent = new Intent(this, StreetPerformingReportActivity.class);
-        startActivity(intent);
-    }
-
-    private void goToLeash() {
-        Intent intent = new Intent(this, OffLeashReportActivity.class);
-        startActivity(intent);
-    }
-
-    private void goToDrug() {
-        Intent intent = new Intent(this, DrugUseReportActivity.class);
-        startActivity(intent);
-    }
 
     private void goToAlcohol() {
         Intent intent = new Intent(this, AlcoholReportActivity.class);
@@ -203,10 +220,7 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void goToSpeeding() {
-        Intent intent = new Intent(this, SpeedingReportActivity.class);
-        startActivity(intent);
-    }
+
 
     private void goToAbandoned() {
         Intent intent = new Intent(this, AbandonedCarReportActivity.class);
@@ -229,6 +243,8 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void finishPatrol() {
+        MainActivity.currentPatrol.finishReport();
+        MainActivity.currentPatrol.printFullReport();
         //TODO
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

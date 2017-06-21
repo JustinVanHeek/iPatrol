@@ -6,14 +6,14 @@
     <string name="weathertype3">Rain</string>
     <string name="weathertype4">Snow</string>
 
-    <string name="timetype1">Dawn</string>
-    <string name="timetype2">Day</string>
-    <string name="timetype3">Dusk</string>
-    <string name="timetype4">Artificial</string>
-    <string name="timetype5">Night</string>
+    <string name="lighttype1">Dawn</string>
+    <string name="lighttype2">Day</string>
+    <string name="lighttype3">Dusk</string>
+    <string name="lighttype4">Artificial</string>
+    <string name="lighttype5">Night</string>
 
     <string name="weather">Weather</string>
-    <string name="time">Time</string>
+    <string name="lighting">Lighting</string>
     <string name="facing">Facing</string>
 
     <string name="itemvalue">Item Type &amp; Value</string>

@@ -151,35 +151,35 @@
                     android:gravity="center"
                     android:text="Illegal Dumping"
                     android:textColor="@android:color/background_light"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/PoliceCallTile"
+                android:id="@+id/RecklessTile"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
-                android:layout_weight="0.25"
 
-                android:background="@color/tilePoliceCall"
+                android:layout_weight="0.25"
+                android:background="@color/tileReckless"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/PoliceCallImage"
+                    android:id="@+id/RecklessImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/police_call"
+                    app:srcCompat="@drawable/reckless_driving"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
 
                 <TextView
-                    android:id="@+id/PoliceCallText"
+                    android:id="@+id/RecklessText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Police Call"
+                    android:text="Reckless"
                     android:textColor="@android:color/background_light" />
 
             </LinearLayout>
@@ -192,91 +192,92 @@
 
 
             <LinearLayout
-                android:id="@+id/StreetPerformTile"
+                android:id="@+id/BusinessTile"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@color/tileStreetPerform"
+                android:background="@color/tileBusiness"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/StreetPerformImage"
+                    android:id="@+id/BusinessImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/street_performing"
+                    app:srcCompat="@drawable/businesses"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
 
                 <TextView
-                    android:id="@+id/StreetPerformText"
+                    android:id="@+id/BusinessText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Street Peforming"
+                    android:text="Business"
                     android:textColor="@android:color/background_light"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
 
             <LinearLayout
-                android:id="@+id/OffLeashTile"
+                android:id="@+id/BushPartyTile"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@color/tileOffLeash"
+                android:background="@color/tileBushParty"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/OffLeashImage"
+                    android:id="@+id/BushPartyImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/offleash"
+                    app:srcCompat="@drawable/bush_party"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
 
                 <TextView
-                    android:id="@+id/OffLeashText"
+                    android:id="@+id/BushPartyText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Off Leash"
+                    android:text="Bush Party"
                     android:textColor="@android:color/background_light" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/DrugTile"
+                android:id="@+id/PublicFacilitiesTile"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@color/tileDrugUse"
+                android:background="@color/tilePublicFacilities"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/DrugImage"
+                    android:id="@+id/PublicFacilitiesImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/drug_use"
+                    app:srcCompat="@drawable/public_facilities"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
 
                 <TextView
-                    android:id="@+id/DrugText"
+                    android:id="@+id/PublicFacilitiesText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Drug Use"
-                    android:textColor="@android:color/background_light" />
+                    android:text="Public Facilities"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -319,60 +320,60 @@
 
 
             <LinearLayout
-                android:id="@+id/RecklessTile"
+                android:id="@+id/SuspiciousTile"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@color/tileReckless"
+                android:background="@color/tileSuspicious"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/RecklessImage"
+                    android:id="@+id/SuspiciousImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/reckless_driving"
+                    app:srcCompat="@drawable/suspicious_activity"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
 
                 <TextView
-                    android:id="@+id/RecklessText"
+                    android:id="@+id/SuspiciousText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Reckless"
-                    android:textColor="@android:color/background_light" />
+                    android:text="Suspicious Activity"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="10sp" />
 
             </LinearLayout>
 
-
             <LinearLayout
-                android:id="@+id/SpeedingTile"
+                android:id="@+id/OpenAccessTile"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
                 android:layout_weight="0.25"
 
-                android:background="@color/tileSpeeding"
+                android:background="@color/tileOpenAccess"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/SpeedingImage"
+                    android:id="@+id/OpenAcessImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/speeding"
+                    app:srcCompat="@drawable/open_access"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
 
                 <TextView
-                    android:id="@+id/SpeedingText"
+                    android:id="@+id/OpenAccessText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Speeding"
+                    android:text="Open Access"
                     android:textColor="@android:color/background_light" />
 
             </LinearLayout>
@@ -392,7 +393,7 @@
                     android:id="@+id/AbandonedImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/illegal_dumping"
+                    app:srcCompat="@drawable/abandoned_auto"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
 
@@ -421,7 +422,7 @@
                     android:id="@+id/CrimePreventImage"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/police_call"
+                    app:srcCompat="@drawable/crime_prevention_notice"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
 

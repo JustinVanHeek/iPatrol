@@ -23,8 +23,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/Buttons"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -46,6 +46,35 @@
             app:layout_constraintTop_toBottomOf="@+id/title">
 
             <TextView
+                android:id="@+id/TitleLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                tools:layout_editor_absoluteX="59dp"
+                tools:layout_editor_absoluteY="143dp" />
+
+            <EditText
+                android:id="@+id/TitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text" />
+
+            <ImageView
+                android:id="@+id/camera"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+            <TextView
                 android:id="@+id/LocationLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,7 +88,7 @@
                 android:inputType="textPostalAddress" />
 
             <TextView
-                android:id="@+id/ItemTypeLabel"
+                android:id="@+id/ItemsLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -67,8 +96,7 @@
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
+                android:layout_height="match_parent">
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -77,13 +105,13 @@
 
                     <CheckBox
                         android:id="@+id/PhoneCheck"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Phone" />
 
                     <CheckBox
                         android:id="@+id/GPSCheck"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="GPS" />
                 </TableRow>
@@ -95,13 +123,13 @@
 
                     <CheckBox
                         android:id="@+id/BagCheck"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Bag" />
 
                     <CheckBox
                         android:id="@+id/PetCheck"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Pet" />
                 </TableRow>
@@ -115,10 +143,12 @@
 
                 <TextView
                     android:id="@+id/OtherLabel"
-                    android:layout_width="96dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Other" />
+                    android:text="Other"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="143dp" />
 
                 <EditText
                     android:id="@+id/OtherText"
@@ -127,6 +157,7 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="text" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -136,10 +167,12 @@
 
                 <TextView
                     android:id="@+id/ValueLabel"
-                    android:layout_width="96dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Value" />
+                    android:text="Value"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="143dp" />
 
                 <EditText
                     android:id="@+id/ValueText"
@@ -152,18 +185,15 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/VehicleInfoLabel"
+                android:id="@+id/VehicleLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:gravity="center"
                 android:text="Vehicle Information" />
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center">
+                android:layout_height="match_parent">
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -172,13 +202,13 @@
 
                     <CheckBox
                         android:id="@+id/UnlockedCheck"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Unlocked" />
 
                     <CheckBox
                         android:id="@+id/WindowCheck"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Window Open" />
                 </TableRow>
@@ -190,15 +220,15 @@
 
                     <CheckBox
                         android:id="@+id/SecurityCheck"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Security Syst." />
 
                     <CheckBox
                         android:id="@+id/TintCheck"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tinted Window" />
+                        android:text="Tinted Windows" />
 
                 </TableRow>
 
@@ -209,7 +239,7 @@
 
                     <CheckBox
                         android:id="@+id/PlateCheck"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Expired Plate" />
 
@@ -231,10 +261,30 @@
                 android:inputType="textMultiLine" />
 
             <TextView
-                android:id="@+id/margin"
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="24sp" />
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ReportedLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reported to Police"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="143dp" />
+
+                <CheckBox
+                    android:id="@+id/ReportedCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
@@ -262,6 +312,19 @@
             android:layout_weight="0.33"
             android:background="@color/tileCrimePrev"
             android:text="OK"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/EmailButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:layout_weight="0.33"
+            android:background="@color/tileCrimePrev"
+            android:text="Email"
+            android:textAllCaps="false"
             android:textColor="@android:color/background_light"
             android:textSize="18sp" />
 

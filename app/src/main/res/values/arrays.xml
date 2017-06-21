@@ -7,12 +7,12 @@
         <item>@string/weathertype4</item>
     </string-array>
 
-    <string-array name="timetypelist">
-        <item>@string/timetype1</item>
-        <item>@string/timetype2</item>
-        <item>@string/timetype3</item>
-        <item>@string/timetype4</item>
-        <item>@string/timetype5</item>
+    <string-array name="lighttypelist">
+        <item>@string/lighttype1</item>
+        <item>@string/lighttype2</item>
+        <item>@string/lighttype3</item>
+        <item>@string/lighttype4</item>
+        <item>@string/lighttype5</item>
     </string-array>
 
     <string-array name="facinglist">

@@ -45,6 +45,21 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title">
 
+            <TextView
+                android:id="@+id/TitleLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                tools:layout_editor_absoluteX="59dp"
+                tools:layout_editor_absoluteY="143dp" />
+
+            <EditText
+                android:id="@+id/TitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text" />
+
             <ImageView
                 android:id="@+id/camera"
                 android:layout_width="match_parent"
@@ -89,6 +104,27 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ReportedLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reported to Police"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="143dp" />
+
+                <CheckBox
+                    android:id="@+id/ReportedCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
