@@ -1,6 +1,7 @@
 package dev.ipatrol.activityreports;
 
 import android.os.Bundle;
+import android.widget.EditText;
 
 import dev.ipatrol.R;
 import dev.ipatrol.objects.reports.ChurchReport;
@@ -17,7 +18,11 @@ public class ChurchReportActivity extends ReportActivity {
     }
 
     protected Report createReport() {
-        ChurchReport report = new ChurchReport(getReportTitle(),getImage(),getLocation(),getNotes());
+        ChurchReport report = new ChurchReport(getReportTitle(),getImage(),getLocation(),getNotes(),
+                ((EditText) findViewById(R.id.EventsText)).getText().toString(),
+                ((EditText) findViewById(R.id.VehiclesText)).getText().toString(),
+                ((EditText) findViewById(R.id.UnusualText)).getText().toString()
+                );
         return report;
     }
 

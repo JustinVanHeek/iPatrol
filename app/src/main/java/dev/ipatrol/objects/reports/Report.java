@@ -5,6 +5,8 @@ import android.location.Location;
 import android.media.Image;
 import android.net.Uri;
 
+import dev.ipatrol.LocationUtils;
+
 /**
  * Created by Justin.vanHeek on 6/19/2017.
  */
@@ -45,6 +47,18 @@ public class Report {
 
     public Bitmap getImage() {
         return image;
+    }
+
+    public String getAddress() {
+        return LocationUtils.getClosestAddress(location);
+    }
+
+    public double getLatitude() {
+        return location.getLatitude();
+    }
+
+    public double getLongitude() {
+        return location.getLongitude();
     }
 
 

@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import dev.ipatrol.MainActivity;
 import dev.ipatrol.MenuActivity;
@@ -28,7 +30,15 @@ public class AbandonedCarReportActivity extends ReportActivity {
 
     @Override
     protected Report createReport() {
-        AbandonedCarReport report = new AbandonedCarReport(getReportTitle(),getImage(),getLocation(),getNotes());
+        AbandonedCarReport report = new AbandonedCarReport(getReportTitle(),getImage(),getLocation(),getNotes(),
+                ((EditText) findViewById(R.id.MakeText)).getText().toString(),
+                ((EditText) findViewById(R.id.ModelText)).getText().toString(),
+                ((EditText) findViewById(R.id.ColourText)).getText().toString(),
+                AbandonedCarReport.Direction.valueOf(((Spinner) findViewById(R.id.FacingSpinner)).getSelectedItem().toString()),
+                ((EditText) findViewById(R.id.PlateText )).getText().toString(),
+                ((CheckBox) findViewById(R.id.ExpPlateCheck)).isChecked(),
+                ((CheckBox) findViewById(R.id.TireCheck)).isChecked()
+                );
         return report;
     }
 

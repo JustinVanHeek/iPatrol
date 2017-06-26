@@ -10,9 +10,27 @@ import android.net.Uri;
 
 public class ParkReport extends Report {
 
-    public ParkReport(String t, Bitmap i, Location loc, String n) {
+    private String events;
+    private String vehicles;
+    private String unusual;
+
+    public ParkReport(String t, Bitmap i, Location loc, String n, String e, String v, String u) {
         super(ReportType.Park, t, i, loc, n);
+        events = e;
+        vehicles = v;
+        unusual = u;
     }
 
 
+    public String getEvents() {
+        return events;
+    }
+
+    public String getOddVehicles() {
+        return vehicles;
+    }
+
+    public String getUnusualActivities() {
+        return unusual;
+    }
 }

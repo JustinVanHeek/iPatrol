@@ -11,8 +11,54 @@ import android.net.Uri;
 
 public class AbandonedCarReport extends Report {
 
+    public String getMake() {
+        return make;
+    }
 
-    public AbandonedCarReport(String t, Bitmap i, Location loc, String n) {
+    public String getModel() {
+        return model;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public Direction getFacing() {
+        return facing;
+    }
+
+    public String getPlate() {
+        return plate;
+    }
+
+    public boolean isExpiredPlate() {
+        return expired;
+    }
+
+    public boolean isFlatTire() {
+        return flat;
+    }
+
+
+    public enum Direction {N, NE, E, SE, S, SW, W, NW}
+
+    private String make;
+    private String model;
+    private String colour;
+    private Direction facing;
+    private String plate;
+    private boolean expired;
+    private boolean flat;
+
+
+    public AbandonedCarReport(String t, Bitmap i, Location loc, String n, String ma, String mo, String c, Direction d, String p, boolean e, boolean f) {
         super(ReportType.AbandonedCar, t, i, loc, n);
+        make = ma;
+        model = mo;
+        colour = c;
+        facing = d;
+        plate = p;
+        expired = e;
+        flat = f;
     }
 }

@@ -2,12 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dev.ipatrol">
 
-    <uses-feature android:name="android.hardware.camera"
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="true" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
 
-
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -25,15 +25,15 @@
         </activity>
         <activity android:name=".NewPatrol" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".activityreports.GraffitiReportActivity"></activity>
-        <activity android:name=".activityreports.RecklessDrivingReportActivity"></activity>
-        <activity android:name=".activityreports.TFAGlassReportActivity"></activity>
-        <activity android:name=".activityreports.AbandonedCarReportActivity"></activity>
-        <activity android:name=".activityreports.AlcoholReportActivity"></activity>
-        <activity android:name=".activityreports.CrimePreventionReportActivity"></activity>
-        <activity android:name=".activityreports.IllegalDumpingReportActivity"></activity>
-        <activity android:name=".activityreports.MischiefReportActivity"></activity>
-        <activity android:name=".activityreports.OtherReportActivity"></activity>
+        <activity android:name=".activityreports.GraffitiReportActivity" />
+        <activity android:name=".activityreports.RecklessDrivingReportActivity" />
+        <activity android:name=".activityreports.TFAGlassReportActivity" />
+        <activity android:name=".activityreports.AbandonedCarReportActivity" />
+        <activity android:name=".activityreports.AlcoholReportActivity" />
+        <activity android:name=".activityreports.CrimePreventionReportActivity" />
+        <activity android:name=".activityreports.IllegalDumpingReportActivity" />
+        <activity android:name=".activityreports.MischiefReportActivity" />
+        <activity android:name=".activityreports.OtherReportActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -42,8 +42,9 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
+
     </application>
 
 </manifest>
