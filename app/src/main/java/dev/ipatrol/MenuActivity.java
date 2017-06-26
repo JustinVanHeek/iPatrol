@@ -286,13 +286,13 @@ public class MenuActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
 
-            String filename="test.pdf";
+            String filename="report.pdf";
             File filelocation = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), filename);
             Uri path = Uri.fromFile(filelocation);
             Intent emailIntent = new Intent(Intent.ACTION_SEND);
 // set the type to 'email'
             emailIntent .setType("vnd.android.cursor.dir/email");
-            String to[] = {"asd@gmail.com"};
+            String to[] = {"justinvanheek@gmail.com"};
             emailIntent .putExtra(Intent.EXTRA_EMAIL, to);
 // the attachment
             emailIntent .putExtra(Intent.EXTRA_STREAM, path);

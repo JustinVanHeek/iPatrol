@@ -37,7 +37,8 @@ public class AbandonedCarReportActivity extends ReportActivity {
                 AbandonedCarReport.Direction.valueOf(((Spinner) findViewById(R.id.FacingSpinner)).getSelectedItem().toString()),
                 ((EditText) findViewById(R.id.PlateText )).getText().toString(),
                 ((CheckBox) findViewById(R.id.ExpPlateCheck)).isChecked(),
-                ((CheckBox) findViewById(R.id.TireCheck)).isChecked()
+                ((CheckBox) findViewById(R.id.TireCheck)).isChecked(),
+                ((EditText) findViewById(R.id.ConditionText)).getText().toString()
                 );
         return report;
     }
