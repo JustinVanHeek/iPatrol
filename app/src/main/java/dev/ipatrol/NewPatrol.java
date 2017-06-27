@@ -318,7 +318,7 @@ public class NewPatrol extends AppCompatActivity {
         int dataRowHeight = dataRows.getHeight();
         int rowHeight = dataRowHeight/6; //7 rows of data (All equal heights)
 
-        dataRows.animate().translationY(rowHeight*page);
+        dataRows.animate().translationY(-rowHeight*page);
     }
     private void setDataRowHeight() {
 

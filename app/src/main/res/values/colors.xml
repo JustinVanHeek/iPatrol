@@ -17,6 +17,30 @@
     <color name="tileSpeeding">#bd1013</color>
     <color name="tileStreetPerform">#4abcc8</color>
     <color name="tileOther">#6a6a6a</color>
+    <color name="tileBusiness">#3688ae</color>
+    <color name="tileBushParty">#711f8f</color>
+    <color name="tilePublicFacilities">#c64f21</color>
+    <color name="tileSuspicious">#a00e11</color>
+    <color name="tileOpenAccess">#1c675d</color>
+
+    <color name="lightAbandoned">#cea2b1</color>
+    <color name="lightAlcohol">#e9a69f</color>
+    <color name="lightCrimePrev">#f4df90</color>
+    <color name="lightDrugUse">#f1b390</color>
+    <color name="lightGraffiti">#8ed780</color>
+    <color name="lightDumping">#789adf</color>
+    <color name="lightMischief">#ed94b3</color>
+    <color name="lightOffLeash">#f4cc82</color>
+    <color name="lightPoliceCall">#bee692</color>
+    <color name="lightReckless">#bacf86</color>
+    <color name="lightSpeeding">#e49091</color>
+    <color name="lightStreetPerform">#97e1e9</color>
+    <color name="lightOther">#b1b1b1</color>
+    <color name="lightBusiness">#85c2df</color>
+    <color name="lightBushParty">#d59ee9</color>
+    <color name="lightPublicFacilities">#eab49f</color>
+    <color name="lightSuspicious">#ec9d9e</color>
+    <color name="lightOpenAccess">#a4eae1</color>
 
     <color name="White">#FFFFFF</color>
     <color name="Ivory">#FFFFF0</color>
@@ -90,9 +114,9 @@
     <color name="MediumOrchid">#BA55D3</color>
     <color name="DarkGoldenrod">#B8860B</color>
     <color name="FireBrick">#B22222</color>
-    <color name="PowderBlue">#B0E0E6</color>
+    <color name="PowderBlue">#b0e0e6</color>
     <color name="LightSteelBlue">#B0C4DE</color>
-    <color name="PaleTurquoise">#AFEEEE</color>
+    <color name="PaleTurquoise">#afeeee</color>
     <color name="GreenYellow">#ADFF2F</color>
     <color name="LightBlue">#ADD8E6</color>
     <color name="DarkGray">#A9A9A9</color>
@@ -158,9 +182,7 @@
     <color name="DarkBlue">#00008B</color>
     <color name="Navy">#000080</color>
     <color name="Black">#000000</color>
-    <color name="tileBusiness">#3688ae</color>
-    <color name="tileBushParty">#711f8f</color>
-    <color name="tilePublicFacilities">#c64f21</color>
-    <color name="tileSuspicious">#a00e11</color>
-    <color name="tileOpenAccess">#1c675d</color>
+    <color name="Menu">#a9bfcc</color>
+    <color name="Menu2">#bedaeb</color>
+
 </resources>

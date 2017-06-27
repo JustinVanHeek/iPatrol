@@ -7,11 +7,13 @@ import android.graphics.Typeface;
 import android.graphics.pdf.PdfDocument;
 import android.location.Location;
 import android.os.Environment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -19,6 +21,7 @@ import dev.ipatrol.LocationUtils;
 import dev.ipatrol.PDFRow;
 import dev.ipatrol.PDFTable;
 import dev.ipatrol.PDFUtil;
+import dev.ipatrol.Resources;
 import dev.ipatrol.objects.reports.AbandonedCarReport;
 import dev.ipatrol.objects.reports.AlcoholReport;
 import dev.ipatrol.objects.reports.BushPartyReport;
@@ -192,19 +195,19 @@ public class Patrol {
         pdf.setMargins(10,10,10,10);
         pdf.println("Report Generated: "+ Calendar.getInstance().getTime().toString(), Typeface.create(Typeface.DEFAULT, Typeface.ITALIC));
         pdf.newline();
-        pdf.println("ACOPA-Patrol Report", 18);
+        pdf.printlnCenter("ACOPA-Patrol Report", 18);
         pdf.newline();
-        pdf.println("Type: " + getPatrolType().toString() + " Patrol", 14);
-        pdf.newline();
-        pdf.drawLine();
-        pdf.newline();
-        pdf.println("Patrol Summary", 14);
-        pdf.newline();
-        pdf.printCenterTable(450,getSummaryTable());
+        pdf.printlnCenter("Type: " + getPatrolType().toString() + " Patrol", 12);
         pdf.newline();
         pdf.drawLine();
         pdf.newline();
-        pdf.println("Patrol Map", 14);
+        pdf.printlnCenter("Patrol Summary", 14);
+        pdf.newline();
+        pdf.printCenterTable(405,getSummaryTable());
+        pdf.newline();
+        pdf.drawLine();
+        pdf.newline();
+        pdf.printlnCenter("Patrol Map", 14);
         //TODO pdf.drawMap();
         pdf.newline();
         pdf.drawLine();
@@ -215,13 +218,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.AbandonedCar) {
                 if(firstReport) {
                     PDFTable abandonedTable = new PDFTable();
-                    abandonedTable.addRow(new PDFRow(new String[]{"Abandoned Auto Events"}, Color.MAGENTA));
+                    abandonedTable.addRow(new PDFRow(new String[]{"Abandoned Auto Events"}, Resources.resources.colorAbandonedCar));
+                    pdf.printCenterTable(405, abandonedTable);
                     pdf.newline();
-                    pdf.printCenterTable(450, abandonedTable);
                     firstReport = false;
                 }
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
                 AbandonedCarReport carReport = (AbandonedCarReport) report;
-                pdf.printCenterTable(450, getAbandonedCarTable(carReport));
+                pdf.printTable(350, getAbandonedCarTable(carReport));
                 pdf.newline();
             }
         }
@@ -233,12 +237,13 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.Alcohol) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Alcohol Events"}, Color.YELLOW));
+                    table.addRow(new PDFRow(new String[]{"Alcohol Events"}, Resources.resources.colorAlcohol));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -250,13 +255,15 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.BushParty) {
                 if(firstReport) {
                     PDFTable abandonedTable = new PDFTable();
-                    abandonedTable.addRow(new PDFRow(new String[]{"Bush Party Events"}, Color.MAGENTA));
+                    abandonedTable.addRow(new PDFRow(new String[]{"Bush Party Events"}, Resources.resources.colorBushParty));
+                    pdf.printCenterTable(405, abandonedTable);
                     pdf.newline();
-                    pdf.printCenterTable(450, abandonedTable);
                     firstReport = false;
                 }
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
                 BushPartyReport bushreport = (BushPartyReport) report;
-                pdf.printCenterTable(450, getBushPartyTable(bushreport));
+                pdf.printTable(350, getBushPartyTable(bushreport));
                 pdf.newline();
             }
         }
@@ -268,13 +275,15 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.Church) {
                 if(firstReport) {
                     PDFTable abandonedTable = new PDFTable();
-                    abandonedTable.addRow(new PDFRow(new String[]{"Church Events"}, Color.YELLOW));
+                    abandonedTable.addRow(new PDFRow(new String[]{"Church Events"}, Resources.resources.colorPublicFacilities));
+                    pdf.printCenterTable(405, abandonedTable);
                     pdf.newline();
-                    pdf.printCenterTable(450, abandonedTable);
                     firstReport = false;
                 }
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
                 RecFacilityReport bushreport = (RecFacilityReport) report;
-                pdf.printCenterTable(450, getRecTable(bushreport));
+                pdf.printTable(350, getRecTable(bushreport));
                 pdf.newline();
             }
         }
@@ -286,13 +295,15 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.CrimePrevention) {
                 if(firstReport) {
                     PDFTable abandonedTable = new PDFTable();
-                    abandonedTable.addRow(new PDFRow(new String[]{"Crime Prevention Notice Events"}, Color.YELLOW));
+                    abandonedTable.addRow(new PDFRow(new String[]{"Crime Prevention Notice Events"}, Resources.resources.colorCrimePrev));
+                    pdf.printCenterTable(405, abandonedTable);
                     pdf.newline();
-                    pdf.printCenterTable(450, abandonedTable);
                     firstReport = false;
                 }
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
                 CrimePreventionReport bushreport = (CrimePreventionReport) report;
-                pdf.printCenterTable(450, getCrimePrevTable(bushreport));
+                pdf.printTable(350, getCrimePrevTable(bushreport));
                 pdf.newline();
             }
         }
@@ -304,12 +315,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.GasStation) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Gas Station Events"}, Color.BLUE));
+                    table.addRow(new PDFRow(new String[]{"Gas Station Events"}, Resources.resources.colorBusiness));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -321,12 +334,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.Mischief) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"General Mischief Events"}, Color.RED));
+                    table.addRow(new PDFRow(new String[]{"General Mischief Events"}, Resources.resources.colorMischief));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -338,12 +353,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.Graffiti) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Graffiti Events"}, Color.GREEN));
+                    table.addRow(new PDFRow(new String[]{"Graffiti Events"}, Resources.resources.colorGraffiti));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -355,12 +372,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.IllegalDumping) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Illegal Dumping Events"}, Color.BLUE));
+                    table.addRow(new PDFRow(new String[]{"Illegal Dumping Events"},Resources.resources.colorBusiness));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -372,12 +391,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.OpenDoor) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Open Door Events"}, Color.GREEN));
+                    table.addRow(new PDFRow(new String[]{"Open Door Events"}, Resources.resources.colorOpen));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -389,12 +410,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.OpenGarage) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Open Garage Events"}, Color.GREEN));
+                    table.addRow(new PDFRow(new String[]{"Open Garage Events"}, Resources.resources.colorOpen));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -406,12 +429,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.OpenGate) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Open Gate Events"}, Color.GREEN));
+                    table.addRow(new PDFRow(new String[]{"Open Gate Events"}, Resources.resources.colorOpen));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -423,12 +448,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.OpenWindow) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Open Window Events"}, Color.GREEN));
+                    table.addRow(new PDFRow(new String[]{"Open Window Events"}, Resources.resources.colorOpen));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -440,12 +467,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.Business) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Other Business Events"}, Color.BLUE));
+                    table.addRow(new PDFRow(new String[]{"Other Business Events"}, Resources.resources.colorBusiness));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -457,13 +486,15 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.Park) {
                 if(firstReport) {
                     PDFTable abandonedTable = new PDFTable();
-                    abandonedTable.addRow(new PDFRow(new String[]{"Park / Playground Events"}, Color.YELLOW));
+                    abandonedTable.addRow(new PDFRow(new String[]{"Park / Playground Events"}, Resources.resources.colorPublicFacilities));
+                    pdf.printCenterTable(405, abandonedTable);
                     pdf.newline();
-                    pdf.printCenterTable(450, abandonedTable);
                     firstReport = false;
                 }
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
                 RecFacilityReport bushreport = (RecFacilityReport) report;
-                pdf.printCenterTable(450, getRecTable(bushreport));
+                pdf.printTable(350, getRecTable(bushreport));
                 pdf.newline();
             }
         }
@@ -475,12 +506,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.RecklessDriving) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Reckless / Impaired Driving Events"}, Color.GREEN));
+                    table.addRow(new PDFRow(new String[]{"Reckless / Impaired Driving Events"}, Resources.resources.colorReckless));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -492,13 +525,15 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.RecFacility) {
                 if(firstReport) {
                     PDFTable abandonedTable = new PDFTable();
-                    abandonedTable.addRow(new PDFRow(new String[]{"Recreational Facility Events"}, Color.YELLOW));
+                    abandonedTable.addRow(new PDFRow(new String[]{"Recreational Facility Events"}, Resources.resources.colorPublicFacilities));
+                    pdf.printTable(405, abandonedTable);
                     pdf.newline();
-                    pdf.printCenterTable(450, abandonedTable);
                     firstReport = false;
                 }
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
                 RecFacilityReport bushreport = (RecFacilityReport) report;
-                pdf.printCenterTable(450, getRecTable(bushreport));
+                pdf.printTable(350, getRecTable(bushreport));
                 pdf.newline();
             }
         }
@@ -510,13 +545,15 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.School) {
                 if(firstReport) {
                     PDFTable abandonedTable = new PDFTable();
-                    abandonedTable.addRow(new PDFRow(new String[]{"School Events"}, Color.YELLOW));
+                    abandonedTable.addRow(new PDFRow(new String[]{"School Events"},Resources.resources.colorPublicFacilities));
+                    pdf.printCenterTable(405, abandonedTable);
                     pdf.newline();
-                    pdf.printCenterTable(450, abandonedTable);
                     firstReport = false;
                 }
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
                 RecFacilityReport bushreport = (RecFacilityReport) report;
-                pdf.printCenterTable(450, getRecTable(bushreport));
+                pdf.printTable(350, getRecTable(bushreport));
                 pdf.newline();
             }
         }
@@ -528,12 +565,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.Shop) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Shop Events"}, Color.BLUE));
+                    table.addRow(new PDFRow(new String[]{"Shop Events"}, Resources.resources.colorBusiness));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -545,12 +584,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.ShopCenter) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Shoppign Center Events"}, Color.BLUE));
+                    table.addRow(new PDFRow(new String[]{"Shopping Center Events"}, Resources.resources.colorBusiness));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -562,12 +603,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.Suspicious) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Suspicious Activities Events"}, Color.RED));
+                    table.addRow(new PDFRow(new String[]{"Suspicious Activities Events"}, Resources.resources.colorSuspicious));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -579,12 +622,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.TFAGlass) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Theft From Auto (Broken Auto Glass) Events"}, Color.MAGENTA));
+                    table.addRow(new PDFRow(new String[]{"Theft From Auto (Broken Auto Glass) Events"}, Resources.resources.colorMischief));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -596,12 +641,14 @@ public class Patrol {
             if (report.getReportType() == Report.ReportType.Other) {
                 if(firstReport) {
                     PDFTable table = new PDFTable();
-                    table.addRow(new PDFRow(new String[]{"Other Events"}, Color.GRAY));
+                    table.addRow(new PDFRow(new String[]{"Other Events"}, Resources.resources.colorOther));
+                    pdf.printCenterTable(405, table);
                     pdf.newline();
-                    pdf.printCenterTable(450, table);
                     firstReport = false;
                 }
-                pdf.printCenterTable(450, getGeneralReportTable(report));
+                pdf.insertPhoto(report.getImage(),10+350,pdf.getCursorY(),55,55);
+
+                pdf.printTable(350, getGeneralReportTable(report));
                 pdf.newline();
             }
         }
@@ -615,15 +662,15 @@ public class Patrol {
     }
 
     private PDFTable getCrimePrevTable(CrimePreventionReport report) {
-        int color = Color.YELLOW;
+        int color = Resources.resources.colorLightCrimePrev;
 
         //This part of the report is the same for each
         PDFTable table = new PDFTable();
         table.setBorder(true, Color.BLACK);
         table.addRow(new PDFRow(new String[]{report.getTitle()}, color));
         table.addRow(new PDFRow(new String[]{"Time", "Address", "Latitude", "Longitude"},color));
-        table.addRow(new PDFRow(new String[]{report.getTime().getTime().toString(), LocationUtils.getClosestAddress(report.getLocation()), "TODO"/*report.getLocation().getLatitude()*/, "TODO"/*report.getLocation().getLongitude()*/}));
-        //Unique fields of this particular report
+        String time = new SimpleDateFormat("MMM d H:mm YYYY").format(report.getTime().getTime());
+        table.addRow(new PDFRow(new String[]{time, LocationUtils.getClosestAddress(report.getLocation()), "TODO"/*report.getLocation().getLatitude()*/, "TODO"/*report.getLocation().getLongitude()*/}));        //Unique fields of this particular report
 
         String items = "";
 
@@ -646,15 +693,15 @@ public class Patrol {
     }
 
     private PDFTable getBushPartyTable(BushPartyReport report) {
-        int color = Color.MAGENTA;
+        int color = Resources.resources.colorLightBushParty;
 
         //This part of the report is the same for each
         PDFTable table = new PDFTable();
         table.setBorder(true, Color.BLACK);
         table.addRow(new PDFRow(new String[]{report.getTitle()}, color));
         table.addRow(new PDFRow(new String[]{"Time", "Address", "Latitude", "Longitude"},color));
-        table.addRow(new PDFRow(new String[]{report.getTime().getTime().toString(), LocationUtils.getClosestAddress(report.getLocation()), "TODO"/*report.getLocation().getLatitude()*/, "TODO"/*report.getLocation().getLongitude()*/}));
-        //Unique fields of this particular report
+        String time = new SimpleDateFormat("MMM d H:mm YYYY").format(report.getTime().getTime());
+        table.addRow(new PDFRow(new String[]{time, LocationUtils.getClosestAddress(report.getLocation()), "TODO"/*report.getLocation().getLatitude()*/, "TODO"/*report.getLocation().getLongitude()*/}));        //Unique fields of this particular report
         table.addRow(new PDFRow(new String[]{"Number of People", "Number of Vehicles"},color));
         table.addRow(new PDFRow(new String[]{report.getNumOfPeople()+"", report.getNumOfVehicles()+""}));
         table.addRow(new PDFRow(new String[]{"Drugs", "Alcohol", "Fire"},color));
@@ -666,15 +713,15 @@ public class Patrol {
     }
 
     private PDFTable getRecTable(RecFacilityReport report) {
-        int color = Color.YELLOW;
+        int color = Resources.resources.colorLightPublicFacilities;
 
         //This part of the report is the same for each
         PDFTable table = new PDFTable();
         table.setBorder(true, Color.BLACK);
         table.addRow(new PDFRow(new String[]{report.getTitle()}, color));
         table.addRow(new PDFRow(new String[]{"Time", "Address", "Latitude", "Longitude"},color));
-        table.addRow(new PDFRow(new String[]{report.getTime().getTime().toString(), LocationUtils.getClosestAddress(report.getLocation()), "TODO"/*report.getLocation().getLatitude()*/, "TODO"/*report.getLocation().getLongitude()*/}));
-        //Unique fields of this particular report
+        String time = new SimpleDateFormat("MMM d H:mm YYYY").format(report.getTime().getTime());
+        table.addRow(new PDFRow(new String[]{time, LocationUtils.getClosestAddress(report.getLocation()), "TODO"/*report.getLocation().getLatitude()*/, "TODO"/*report.getLocation().getLongitude()*/}));        //Unique fields of this particular report
         table.addRow(new PDFRow(new String[]{"Events Happening"},color));
         table.addRow(new PDFRow(new String[]{report.getEvents()}));
         table.addRow(new PDFRow(new String[]{"Vehicles Parked at Odd Times"},color));
@@ -691,37 +738,37 @@ public class Patrol {
         int color = Color.GRAY;
 
         switch (report.getReportType()) {
-            case Alcohol: color = Color.YELLOW;
+            case Alcohol: color = Resources.resources.colorLightAlcohol;
                 break;
-            case GasStation: color = Color.BLUE;
+            case GasStation: color = Resources.resources.colorLightBusiness;
                 break;
-            case Mischief: color = Color.RED;
+            case Mischief: color = Resources.resources.colorLightMischief;
                 break;
-            case Graffiti: color = Color.GREEN;
+            case Graffiti: color = Resources.resources.colorLightGraffiti;
                 break;
-            case IllegalDumping: color = Color.BLUE;
+            case IllegalDumping: color = Resources.resources.colorLightDumping;
                 break;
-            case OpenDoor: color = Color.GREEN;
+            case OpenDoor: color = Resources.resources.colorLightOpen;
                 break;
-            case OpenGarage: color = Color.GREEN;
+            case OpenGarage: color = Resources.resources.colorLightOpen;
                 break;
-            case OpenGate: color = Color.GREEN;
+            case OpenGate: color = Resources.resources.colorLightOpen;
                 break;
-            case OpenWindow: color = Color.GREEN;
+            case OpenWindow: color = Resources.resources.colorLightOpen;
                 break;
-            case Business: color = Color.BLUE;
+            case Business: color = Resources.resources.colorLightBusiness;
                 break;
-            case RecklessDriving: color = Color.GREEN;
+            case RecklessDriving: color = Resources.resources.colorLightReckless;
                 break;
-            case Shop: color = Color.BLUE;
+            case Shop: color = Resources.resources.colorLightBusiness;
                 break;
-            case ShopCenter: color = Color.BLUE;
+            case ShopCenter: color = Resources.resources.colorLightBusiness;
                 break;
-            case Suspicious: color = Color.RED;
+            case Suspicious: color = Resources.resources.colorLightSuspicious;
                 break;
-            case TFAGlass: color = Color.MAGENTA;
+            case TFAGlass: color = Resources.resources.colorLightMischief;
                 break;
-            case Other: color = Color.GRAY;
+            case Other: color = Resources.resources.colorLightOther;
                 break;
         }
         //This part of the report is the same for each
@@ -729,7 +776,8 @@ public class Patrol {
         table.setBorder(true, Color.BLACK);
         table.addRow(new PDFRow(new String[]{report.getTitle()}, color));
         table.addRow(new PDFRow(new String[]{"Time", "Address", "Latitude", "Longitude"},color));
-        table.addRow(new PDFRow(new String[]{report.getTime().getTime().toString(), LocationUtils.getClosestAddress(report.getLocation()), "TODO"/*report.getLocation().getLatitude()*/, "TODO"/*report.getLocation().getLongitude()*/}));
+        String time = new SimpleDateFormat("MMM d H:mm YYYY").format(report.getTime().getTime());
+        table.addRow(new PDFRow(new String[]{time, LocationUtils.getClosestAddress(report.getLocation()), "TODO"/*report.getLocation().getLatitude()*/, "TODO"/*report.getLocation().getLongitude()*/}));
         table.addRow(new PDFRow(new String[]{"Notes"},color));
         table.addRow(new PDFRow(new String[]{report.getNotes()}));
 
@@ -737,15 +785,15 @@ public class Patrol {
     }
 
     private PDFTable getAbandonedCarTable(AbandonedCarReport report) {
-        int color = Color.MAGENTA;
+        int color = Resources.resources.colorLightAbandonedCar;
 
         //This part of the report is the same for each
         PDFTable table = new PDFTable();
         table.setBorder(true, Color.BLACK);
         table.addRow(new PDFRow(new String[]{report.getTitle()}, color));
         table.addRow(new PDFRow(new String[]{"Time", "Address", "Latitude", "Longitude"},color));
-        table.addRow(new PDFRow(new String[]{report.getTime().getTime().toString(), LocationUtils.getClosestAddress(report.getLocation()), "TODO"/*report.getLocation().getLatitude()*/, "TODO"/*report.getLocation().getLongitude()*/}));
-        //Unique fields of this particular report
+        String time = new SimpleDateFormat("MMM d H:mm YYYY").format(report.getTime().getTime());
+        table.addRow(new PDFRow(new String[]{time, LocationUtils.getClosestAddress(report.getLocation()), "TODO"/*report.getLocation().getLatitude()*/, "TODO"/*report.getLocation().getLongitude()*/}));        //Unique fields of this particular report
         table.addRow(new PDFRow(new String[]{"Make", "Model", "Color", "Direction Facing"},color));
         table.addRow(new PDFRow(new String[]{report.getMake(), report.getModel(), report.getColour(), report.getFacing().name()}));
         table.addRow(new PDFRow(new String[]{"License Plate", "Expired Plate", "Flat Tire(s)"},color));
@@ -770,7 +818,7 @@ public class Patrol {
     private PDFTable getSummaryTable() {
         PDFTable summary = new PDFTable();
         summary.addRow(new PDFRow(new String[]{"Start Time", "End Time", "Duration (min)"},Color.GRAY));
-        summary.addRow(new PDFRow(new String[]{getStartTime().getTime().toString(),getEndTime().getTime().toString(),getDuration()+""}));
+        summary.addRow(new PDFRow(new String[]{new SimpleDateFormat("MMM d H:mm YYYY").format(getStartTime().getTime()),new SimpleDateFormat("MMM d H:mm YYYY").format(getEndTime().getTime()),getDuration()+""}));
         summary.addRow(new PDFRow());
         summary.addRow(new PDFRow(new String[]{"Start Location", "End Location", "Distance (km)"},Color.GRAY));
         summary.addRow(new PDFRow(new String[]{LocationUtils.getClosestAddress(getStartLocation()),LocationUtils.getClosestAddress(getEndLocation()),getDistance()+""}));

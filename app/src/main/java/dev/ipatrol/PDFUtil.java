@@ -1,8 +1,10 @@
 package dev.ipatrol;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.pdf.PdfDocument;
 import android.os.Environment;
@@ -31,6 +33,18 @@ public class PDFUtil {
     private int cursorX = 0;
     private int cursorY = 0;
 
+    public int getCursorY() {
+        return cursorY;
+    }
+
+    public void insertPhoto(Bitmap b, int x, int y, int w, int l) {
+        if (b != null) {
+            Paint p = new Paint();
+            Rect r = new Rect();
+            r.set(x, y, x + w, y + l);
+            canvas.drawBitmap(b, null, r, p);
+        }
+    }
 
     public void save() {
         // finish the page
@@ -49,7 +63,18 @@ public class PDFUtil {
         document.close();
     }
 
+    public void printlnCenter(String text, int size) {
+        Paint p = new Paint();
+        p.setTextSize(size);
+        p.setTextAlign(Paint.Align.CENTER);
+        canvas.drawText(text,canvas.getWidth()/2,cursorY+size,p);
+        newline(size);
+    }
+
     public void print(String text, int size) {
+        if(cursorY+size > canvas.getHeight()) {
+            createNewPage();
+        }
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
         paint.setTextSize(size);
@@ -57,6 +82,9 @@ public class PDFUtil {
     }
 
     public void print(String text, Typeface type, int size) {
+        if(cursorY+size > canvas.getHeight()) {
+            createNewPage();
+        }
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
         paint.setTypeface(type);
@@ -65,6 +93,9 @@ public class PDFUtil {
     }
 
     public void print(String text) {
+        if(cursorY+textSize > canvas.getHeight()) {
+            createNewPage();
+        }
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
         paint.setTextSize(textSize);
@@ -82,6 +113,9 @@ public class PDFUtil {
     }
 
     public void print(String text, Typeface type) {
+        if(cursorY+textSize > canvas.getHeight()) {
+            createNewPage();
+        }
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
         paint.setTypeface(type);
@@ -100,14 +134,23 @@ public class PDFUtil {
     public void setCursor(int x, int y) {
         cursorX = x;
         cursorY = y;
+        if(cursorY > canvas.getHeight()) {
+            createNewPage();
+        }
     }
 
     public void moveCursor(int x, int y) {
         cursorX = cursorX + x;
         cursorY = cursorY + y;
+        if(cursorY > canvas.getHeight()) {
+            createNewPage();
+        }
     }
 
     public PDFUtil() {
+
+        cursorX = marginLeft;
+        cursorY = marginTop;
 
 
         // create a new document
@@ -115,7 +158,7 @@ public class PDFUtil {
 
         // crate a page description
         PdfDocument.PageInfo pageInfo =
-                new PdfDocument.PageInfo.Builder(500, 1000, 1).create();
+                new PdfDocument.PageInfo.Builder(425, 550, 1).create();
 
         // start a page
         page = document.startPage(pageInfo);
@@ -124,6 +167,10 @@ public class PDFUtil {
     }
 
     public void createNewPage(){
+
+        cursorX = marginLeft;
+        cursorY = marginTop;
+
         // finish the page
         document.finishPage(page);
 
@@ -131,7 +178,7 @@ public class PDFUtil {
 
         // crate a page description
         PdfDocument.PageInfo pageInfo =
-                new PdfDocument.PageInfo.Builder(500, 1000, pageNum).create();
+                new PdfDocument.PageInfo.Builder(425, 550, pageNum).create();
 
         // start a page
         page = document.startPage(pageInfo);
@@ -142,16 +189,10 @@ public class PDFUtil {
 
     public void newline(int size) {
         setCursor(marginLeft, cursorY+size);
-        if(cursorY > canvas.getHeight()) {
-            createNewPage();
-        }
     }
 
     public void newline() {
         setCursor(marginLeft, cursorY+textSize);
-        if(cursorY > canvas.getHeight()) {
-            createNewPage();
-        }
     }
 
     public void println(String text, int size) {
@@ -168,19 +209,27 @@ public class PDFUtil {
         drawTable(canvas.getWidth()/2-width/2, width, table);
     }
 
+    public void printTable(int width, PDFTable table) {
+        drawTable(cursorX, width, table);
+    }
+
     private void drawTable(int x, int width, PDFTable table) {
 
         Paint paint = new Paint();
         paint.setColor(table.getBorderColor());
 
         if (table.hasBorder()) {
-            canvas.drawLine(x,cursorY,x+width,cursorY,paint);
+            paint.setStrokeWidth(3);
+            canvas.drawLine(x-1,cursorY,x+width+1,cursorY,paint);
         }
 
         for (PDFRow row : table.getRows()) {
+            if(cursorY+cellHeight > canvas.getHeight()) {
+                createNewPage();
+            }
             if (table.hasBorder()) {
+                paint.setStrokeWidth(3);
                 canvas.drawLine(x,cursorY,x,cursorY+cellHeight,paint);
-                canvas.drawLine(x+width,cursorY,x+width,cursorY+cellHeight,paint);
             }
             int cellWidth;
             if (row.getCells().length == 0) {
@@ -190,15 +239,24 @@ public class PDFUtil {
                 cellWidth = width/row.getCells().length;
             }
             int column = 0;
+            Paint rowPaint = new Paint();
+            rowPaint.setColor(row.getColor());
+            canvas.drawRect(x,cursorY,x+width,cursorY+cellHeight,rowPaint);
             for (String cell : row.getCells()) {
                 drawCell(x+cellWidth*column, cursorY, cellWidth, cell, row.getColor());
                 column++;
             }
+            if (table.hasBorder()) {
+                paint.setStrokeWidth(2);
+                canvas.drawLine(x + width, cursorY, x + width, cursorY + cellHeight, paint);
+            }
+
             setCursor(marginLeft, cursorY+cellHeight);
         }
 
         if (table.hasBorder()) {
-            canvas.drawLine(x,cursorY,x+width,cursorY,paint);
+            paint.setStrokeWidth(2);
+            canvas.drawLine(x-1,cursorY,x+width+1,cursorY,paint);
         }
     }
 
@@ -215,7 +273,6 @@ public class PDFUtil {
         textPaint.setTextSize(textSize);
 
 
-        canvas.drawRect(x,y,x+width,y+cellHeight,cellPaint);
 
         canvas.drawText(data,x+width/2,y+cellHeight/2+textSize/2,textPaint);
 

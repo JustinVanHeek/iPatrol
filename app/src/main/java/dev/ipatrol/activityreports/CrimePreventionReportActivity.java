@@ -23,8 +23,16 @@ public class CrimePreventionReportActivity extends ReportActivity {
 
     @Override
     protected Report createReport() {
+        String value = ((EditText) findViewById(R.id.ValueText)).getText().toString();
+        int v = 0;
+        try {
+            v = Integer.parseInt(value);
+        }
+        catch (Exception e) {
+
+        }
         CrimePreventionReport report = new CrimePreventionReport(getReportTitle(),getImage(),getLocation(),getNotes(),
-                Integer.parseInt(((EditText) findViewById(R.id.ValueText)).getText().toString()),
+                v,
                 getItems(),
                 ((CheckBox) findViewById(R.id.WindowCheck)).isChecked(),
                 ((CheckBox) findViewById(R.id.TintCheck)).isChecked(),
